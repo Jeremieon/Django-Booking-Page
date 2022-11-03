@@ -125,4 +125,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_DIR = [STATIC_DIR,]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
