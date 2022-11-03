@@ -1,0 +1,35 @@
+{% extends 'user_form/base.html' %} 
+{% load crispy_forms_tags %}
+{% block form %}
+<form action="" method="post">
+  {{booking|crispy }} {% csrf_token %}
+  <input type="submit" value="Submit" />
+</form>
+<h5 class="mt-4 fw lighter display-6">List of Bookings</h5>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Booking Date</th>
+      <th>Description</th>
+      <th>Booking Reference</th>
+    </tr>
+  </thead>
+  {% for i in book_data %}
+  <tbody>
+    <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.booking_date}}</td>
+      <td>{{i.description}}</td>
+      <td>{{i.Booking_ref}}</td>
+    </tr>
+  </tbody>
+
+  <tbody>
+    {% empty %}
+    <h1>No Data Available for now</h1>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock form %}
